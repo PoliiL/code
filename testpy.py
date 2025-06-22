@@ -1,14 +1,17 @@
-# Создаем список
-fruits = ["яблоко", "банан", "вишня"]
+def calculator():
+    num1 = float(input("Enter the first number: "))
+    operator = input("Enter an operator (+, -, *, /): ")
+    num2 = float(input("Enter the second number: "))
 
-# Добавляем элемент в список
-fruits.append("апельсин")
+    if operator == '+':
+        print(num1 + num2)
+    elif operator == '-':
+        print(num1 - num2)
+    elif operator == '*':
+        print(num1 * num2)
+    elif operator == '/':
+        print(num1 / num2)
+    else:
+        print("Invalid operator")
 
-# Выводим список
-print(fruits)
-
-# Удаляем элемент из списка
-fruits.remove("банан")
-
-# Выводим обновленный список
-print(fruits)
+calculator()
