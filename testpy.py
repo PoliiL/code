@@ -1,29 +1,19 @@
 import random
 
-def hangman():
-    words = ['python', 'hangman', 'programming', 'code']
-    word = random.choice(words)
-    guesses = ''
-    attempts = 6
+def guess_the_number():
+    number = random.randint(1, 100)
+    attempts = 0
 
-    while attempts > 0:
-        for char in word:
-            if char in guesses:
-                print(char, end=' ')
-            else:
-                print('_', end=' ')
-        print()
+    while True:
+        guess = int(input("Take a guess: "))
+        attempts += 1
 
-        guess = input("Guess a letter: ")
-        guesses += guess
-
-        if guess not in word:
-            attempts -= 1
-
-        if set(word) <= set(guesses):
-            print("Congratulations! You guessed the word.")
+        if guess < number:
+            print("Too low!")
+        elif guess > number:
+            print("Too high!")
+        else:
+            print("Congratulations! You guessed the number in", attempts, "attempts.")
             break
-        elif attempts == 0:
-            print("Sorry, you ran out of attempts. The word was", word)
 
-hangman()
+guess_the_number()
