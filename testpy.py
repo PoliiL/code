@@ -1,17 +1,19 @@
-def calculator():
-    num1 = float(input("Enter the first number: "))
-    operator = input("Enter an operator (+, -, *, /): ")
-    num2 = float(input("Enter the second number: "))
+import random
 
-    if operator == '+':
-        print(num1 + num2)
-    elif operator == '-':
-        print(num1 - num2)
-    elif operator == '*':
-        print(num1 * num2)
-    elif operator == '/':
-        print(num1 / num2)
-    else:
-        print("Invalid operator")
+def guess_the_number():
+    number = random.randint(1, 100)
+    attempts = 0
 
-calculator()
+    while True:
+        guess = int(input("Take a guess: "))
+        attempts += 1
+
+        if guess < number:
+            print("Too low!")
+        elif guess > number:
+            print("Too high!")
+        else:
+            print("Congratulations! You guessed the number in", attempts, "attempts.")
+            break
+
+guess_the_number()
